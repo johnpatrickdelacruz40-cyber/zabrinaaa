@@ -1,0 +1,37 @@
+:root { --main-blue: #0ea5e9; --light-blue: #e0f2fe; --soft-blue: #bae6fd; }
+body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: radial-gradient(circle, var(--light-blue) 0%, var(--soft-blue) 100%); font-family: 'Quicksand', sans-serif; overflow: hidden; }
+
+.heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.heart { position: absolute; color: var(--main-blue); opacity: 0.5; animation: float 6s linear infinite; }
+@keyframes float { 0% { transform: translateY(110vh); } 100% { transform: translateY(-10vh); } }
+
+.vault-container { position: relative; z-index: 10; text-align: center; width: 90%; max-width: 420px; background: rgba(255, 255, 255, 0.7); padding: 25px; border-radius: 30px; backdrop-filter: blur(10px); border: 2px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+.main-welcome { font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: #0369a1; margin: 10px 0; }
+.pass-box { width: 35px; height: 45px; text-align: center; font-size: 1.5rem; border: 2px solid var(--soft-blue); border-radius: 10px; margin: 0 4px; }
+
+.game-slot { width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 20px; font-weight: 700; cursor: pointer; transition: 0.4s; background: #f1f5f9; color: #94a3b8; }
+.active-game { background: var(--main-blue) !important; color: white !important; transform: scale(1.05); }
+.reward-slot { background: #fef3c7 !important; color: #d97706 !important; border: 2px dashed #fbbf24 !important; }
+.locked { opacity: 0.5; cursor: not-allowed; }
+
+.options-container { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: 20px; }
+.options-container button { background: white; border: 1px solid var(--soft-blue); padding: 10px 0; border-radius: 8px; color: var(--main-blue); font-weight: bold; cursor: pointer; }
+
+/* Answers: No underline for spaces */
+.slots-container { margin: 15px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; }
+.slot { border-bottom: 3px solid var(--main-blue); width: 20px; font-size: 1.2rem; color: #0369a1; font-weight: bold; text-align: center; }
+.slot.space { border-bottom: none; width: 12px; }
+
+.collage-container img { width: 100%; max-width: 280px; border-radius: 15px; border: 4px solid white; }
+.puzzle-grid { display: grid; gap: 2px; justify-content: center; border: 5px solid white; width: 300px; height: 300px; margin: 0 auto; }
+.puzzle-piece { cursor: pointer; background-size: 300px 300px; }
+
+/* MOVIE SCROLL - 15s (Faster) */
+.credits-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--light-blue); overflow: hidden; z-index: 1000; }
+.credits-content { position: absolute; width: 80%; left: 10%; text-align: center; top: 100%; color: #0369a1; line-height: 1.8; }
+.scroll-active { animation: movieScroll 15s linear forwards; }
+@keyframes movieScroll { from { top: 100%; } to { top: 10%; } }
+
+.unlock-btn { background: var(--main-blue); color: white; padding: 12px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; }
+.clear-btn { background: transparent; border: 1px solid var(--main-blue); color: var(--main-blue); padding: 5px 15px; border-radius: 20px; margin-top: 10px; cursor: pointer; font-size: 0.7rem; }

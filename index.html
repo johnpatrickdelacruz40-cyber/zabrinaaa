@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Zabrina Rosemary Only 💙</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="blue-theme">
+    <div class="heart-bg" id="heart-bg"></div>
+
+    <div id="login-screen" class="vault-container">
+        <h1 class="main-welcome">For Zabrina Rosemary only 💙</h1>
+        <p class="vault-subtitle">Enter our special date (6 digits)</p>
+        <div class="pass-container" id="pass-boxes">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 0)">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 1)">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 2)">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 3)">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 4)">
+            <input type="text" class="pass-box" maxlength="1" oninput="moveFocus(this, 5)">
+        </div>
+        <button onclick="checkPassword()" class="unlock-btn">Unlock Memories</button>
+    </div>
+
+    <div id="menu-screen" class="vault-container" style="display:none;">
+        <h1 class="main-welcome">For You, Sayangu 💙</h1>
+        <div class="menu-grid">
+            <div class="btn-wrapper"><button id="btn-game1" onclick="startGame1()" class="game-slot active-game">01. Question & Answer</button></div>
+            <div class="btn-wrapper" title="Locked!"><button id="btn-game2" onclick="startGame2()" class="game-slot locked" disabled>02. 4 Pics 1 Word 🔒</button></div>
+            <div class="btn-wrapper" title="Locked!"><button id="btn-game3" onclick="startGame3()" class="game-slot locked" disabled>03. Jigsaw Puzzle 🔒</button></div>
+            <div class="btn-wrapper" title="Locked!"><button id="btn-reward" onclick="showReward()" class="game-slot locked reward-slot" disabled>🎁 OPEN YOUR REWARD 🎁</button></div>
+        </div>
+    </div>
+
+    <div id="game1-screen" class="vault-container" style="display:none;">
+        <h2 class="vault-subtitle">Game 1: Q&A</h2>
+        <p id="g1-question" class="question-text"></p>
+        <div id="g1-slots" class="slots-container"></div>
+        <div id="g1-options" class="options-container"></div>
+        <button onclick="resetGuess('g1')" class="clear-btn">Clear</button>
+    </div>
+
+    <div id="game2-screen" class="vault-container" style="display:none;">
+        <h2 id="g2-title" class="vault-subtitle">Level 1</h2>
+        <div class="collage-container"><img id="collage-img" src="" alt="Game Image"></div>
+        <div id="g2-slots" class="slots-container"></div>
+        <div id="g2-options" class="options-container"></div>
+        <button onclick="resetGuess('g2')" class="clear-btn">Clear</button>
+    </div>
+
+    <div id="game3-screen" class="vault-container" style="display:none;">
+        <h2 id="g3-title" class="vault-subtitle">Jigsaw</h2>
+        <div id="puzzle-board" class="puzzle-grid"></div>
+    </div>
+
+    <div id="ending-screen" class="credits-wrap" style="display:none;">
+        <div class="credits-content" id="final-message">
+            <h1 class="main-welcome">Hello my baby!</h1>
+            <p>I know I told you more than once that I didn’t get you a gift, so let’s just say this is your surprise! Wkwkwk.</p>
+            <p>Anyway, first of all, I want to wish you a very happy birthday! I hope your day has been wonderful and memorable. I know it’s already late, but I chose this time to send this because I wanted you to focus on having fun and celebrating with your family and loved ones first. Now, I guess it’s my turn!</p>
+            <p>I wish you all the success in the world. I hope you stay kind, cute (even though you could never not be cute!), humble, funny, close to God, and as happy as ever. I pray for your good health, that you stay safe, sleep well, wake up happy, and always keep smiling.</p>
+            <p>I think that’s all for now, bayi. As I always say, I love you so mwacchyyy! Mwah mwah, sayangku! I hope this little effort makes your night awesome and memorable.</p>
+            <h2 class="main-welcome" style="font-size: 2rem;">Goodnight, my sayang. 😘</h2>
+            <br><p>— Always Yours —</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
